@@ -10,5 +10,6 @@ sed 's/,/./' 8.out > 9.out # Las ',' de los decimales pasan a '.'
 sed 's/;/,/g' 9.out > 10.out # Reemplaza ';' por ','
 sed -e "s/,$/,\\\N/g" 10.out > 11.out # Reemplaza por ',\N' las filas que terminan en ','
 sed -e 's!,200.0!,200,0!' 11.out > 12.out # Cascarita 1
-sed -e 's!2013-08-02,!2014-08-02,!' 12.out > 13.out # Cascarita 2
-cat 13.out
+sed -e 's!2013-08-02,!2014-08-02,!' 12.out > result.csv # Cascarita 2
+rm -rf *.out
+cat result.csv
